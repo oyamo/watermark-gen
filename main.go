@@ -200,6 +200,7 @@ func AddWatermarkImage(mainImagePath, watermarkImagePath, outPath string, x, y, 
 func ValidatePaths(path ...string) {
 	for _, v := range path {
 		if v == "" {
+			fmt.Fprint(os.Stderr, "invalid usage\n")
 			flag.Usage()
 			os.Exit(1)
 		}
